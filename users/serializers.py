@@ -8,12 +8,20 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('email', 'phone', 'city', 'avatar',)
+        exclude = ('id',)
 
 
-class UserPaymentSerializer(serializers.ModelSerializer):
-    payment_list = PaymentSerializer(source='payment', many=True)
+class UserViewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('email', 'phone', 'city', 'avatar', 'payment_list',)
+        fields = ('first_name', 'email', 'phone', 'city', 'avatar',)
+
+
+class UserPaymentSerializer(serializers.ModelSerializer):
+    payment_list = PaymentSerializer(source='payment', many=True, read_only=True)
+
+    class Meta:
+        model = User
+        exclude = ('id',)
+
