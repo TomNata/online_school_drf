@@ -1,0 +1,106 @@
+[
+  {
+    "model": "course.course",
+    "pk": 2,
+    "fields": {
+      "name": "Python developer",
+      "preview": "",
+      "description": "11-months course",
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 3,
+    "fields": {
+      "name": "Data Analitics",
+      "preview": "",
+      "description": "9-months course",
+      "owner": 8
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 2,
+    "fields": {
+      "course": 2,
+      "name": "DRF Rest",
+      "description": "Generics and Viewsets",
+      "preview": "",
+      "video_url": null,
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 4,
+    "fields": {
+      "course": 2,
+      "name": "DjangoORM",
+      "description": "ORM",
+      "preview": "",
+      "video_url": null,
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 5,
+    "fields": {
+      "course": 2,
+      "name": "Django",
+      "description": "REST_Framework",
+      "preview": "",
+      "video_url": null,
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 6,
+    "fields": {
+      "course": 2,
+      "name": "Django Rest Framework",
+      "description": "ViewSets and Generics",
+      "preview": "",
+      "video_url": null,
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 7,
+    "fields": {
+      "course": 3,
+      "name": "Excel+",
+      "description": "Grafics",
+      "preview": "",
+      "video_url": null,
+      "owner": 8
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 8,
+    "fields": {
+      "course": 3,
+      "name": "NumPy",
+      "description": "Practice",
+      "preview": "",
+      "video_url": null,
+      "owner": 8
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 10,
+    "fields": {
+      "course": 3,
+      "name": "Pandas",
+      "description": "BigData Introduction",
+      "preview": "",
+      "video_url": null,
+      "owner": 8
+    }
+  }
+]

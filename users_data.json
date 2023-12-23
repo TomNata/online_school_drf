@@ -1,0 +1,164 @@
+[
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$c8BHQc8MM8tPezaQqwjvYm$y6A7a7DpOrGCk3r+0Ibjx+qcBmP5Q9CTLw/k3Aelk6c=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2023-12-21T06:26:03.695Z",
+      "email": "titov@yandex.ru",
+      "phone": null,
+      "city": "Tolyati",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0JipNErM6klo75yg9ypfpt$diUP25nKIgPhe4EmDPu4W4L0Ynz5bb+lMpZYJPQdKWk=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2023-12-21T06:28:30.341Z",
+      "email": "popov@yandex.ru",
+      "phone": null,
+      "city": "Tver",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$hrY1qz18qxwsGdlGJyCMub$fZ3r4z/zpzevI/qh/HSpunCBTI89+mIV1Qojl+YyKGE=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2023-12-21T06:29:00.288Z",
+      "email": "ivanova@mail.ru",
+      "phone": null,
+      "city": "Moscow",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$sbLbfj4eh8eK60WAHkQAtO$ZbA/+pnCF9wM75kg26tCsTHGYvHWYbK+6f2IABvii+c=",
+      "last_login": "2023-12-21T10:11:27.998Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Tomova",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-21T10:09:31.330Z",
+      "email": "tomova@mail.ru",
+      "phone": null,
+      "city": "",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$Lzf68kaRdyLBEZYSAKqaeG$W6lQqI6xJOjpYvV25ifAxDvCT3kgSbjfqO+1Tee+2Co=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2023-12-22T00:32:55.468Z",
+      "email": "popova@mail.ru",
+      "phone": null,
+      "city": "Tver",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$p1yDq7vTaZeLsnb2mArA5w$m9xztJdf39Zpk1ZVbXjV5akz+J+5SiyEa5Di2lmVLXM=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-22T04:27:37Z",
+      "email": "kim@yandex.ru",
+      "phone": "222-33-21",
+      "city": "Krasnodar",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$f4fvscCz4HwjEWTNvbzLHd$/0bIGyLpDzbyzck3FpGjQtcq9o6eT3r2QAa82AubBhE=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-22T04:30:35Z",
+      "email": "moderator@mail.ru",
+      "phone": null,
+      "city": "Minsk",
+      "avatar": "",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$43fUocuoV8saNZGf2Zgyey$kmDJuGrea6KoGUxKoLv7FWJLkQl+lxelLGghcxZ/OUw=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2023-12-23T04:21:38.791Z",
+      "email": "markova@gmail.com",
+      "phone": null,
+      "city": "Sochi",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
