@@ -72,8 +72,8 @@
     "pk": 7,
     "fields": {
       "course": 3,
-      "name": "Excel+",
-      "description": "Grafics",
+      "name": "test",
+      "description": "test",
       "preview": "",
       "video_url": null,
       "owner": 8
@@ -101,6 +101,39 @@
       "preview": "",
       "video_url": null,
       "owner": 8
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 11,
+    "fields": {
+      "course": 2,
+      "name": "SQL",
+      "description": "PostgreSQL. DDL, DML methods",
+      "preview": "",
+      "video_url": "https://www.youtube.com/watch?v=WpojDncIWOw&pp=ygUVcG9zdGdyZXNxbCDRg9GA0L7QutC4",
+      "owner": 6
+    }
+  },
+  {
+    "model": "course.lesson",
+    "pk": 13,
+    "fields": {
+      "course": 3,
+      "name": "test",
+      "description": "test",
+      "preview": "",
+      "video_url": null,
+      "owner": 8
+    }
+  },
+  {
+    "model": "course.subscription",
+    "pk": 35,
+    "fields": {
+      "course": 2,
+      "user": 8,
+      "is_active": true
     }
   }
 ]

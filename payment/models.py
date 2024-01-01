@@ -1,5 +1,4 @@
 from django.db import models
-
 from course.models import Course, Lesson
 from users.models import User
 
@@ -18,7 +17,7 @@ class Payment(models.Model):
     method = models.CharField(max_length=20, choices=PAYMENT_CHOICES, verbose_name='способ оплаты')
 
     def __str__(self):
-        return f'Оплата {self.lesson if self.lesson else self.course} от {self.user}'
+        return f'Оплата за "{self.lesson if self.lesson else self.course}" от {self.user}'
 
     class Meta:
         verbose_name = 'оплата'
