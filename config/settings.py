@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
     'rest_framework',
+    'rest_framework_simplejwt',
     'users',
     'course',
     'payment',
     'django_filters',
-    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -149,4 +150,19 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
+}
+
+STRIPE_TEST_API_KEY = os.getenv('STRIPE_TEST_API_KEY')
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        },
+        'basic': {
+            'type': 'basic'
+        }
+    }
 }
