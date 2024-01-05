@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, status
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, ListAPIView, \
     UpdateAPIView, DestroyAPIView
@@ -58,11 +59,19 @@ class LessonCreateView(CreateAPIView):
         new_lesson.owner = self.request.user
         new_lesson.save()
 
+    @swagger_auto_schema(operation_id="Создание урока")
+    def post(self, request, *args, **kwargs):
+        return super(LessonCreateView, self).post(request, *args, **kwargs)
+
 
 class LessonDetailView(RetrieveAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsModeratorOrOwner]
+
+    @swagger_auto_schema(operation_id="Информация об уроке")
+    def get(self, request, *args, **kwargs):
+        return super(LessonDetailView, self).get(request, *args, **kwargs)
 
 
 class LessonListView(ListAPIView):
@@ -78,16 +87,32 @@ class LessonListView(ListAPIView):
             lessons = Lesson.objects.all()
         return lessons
 
+    @swagger_auto_schema(operation_id="Список уроков")
+    def get(self, request, *args, **kwargs):
+        return super(LessonListView, self).get(request, *args, **kwargs)
+
 
 class LessonUpdateView(UpdateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsModeratorOrOwner]
 
+    @swagger_auto_schema(operation_id="Редактирование урока")
+    def put(self, request, *args, **kwargs):
+        return super(LessonUpdateView, self).put(request, *args, **kwargs)
+
+    @swagger_auto_schema(operation_id="Частичное редактирование урока")
+    def patch(self, request, *args, **kwargs):
+        return super(LessonUpdateView, self).patch(request, *args, **kwargs)
+
 
 class LessonDeleteView(DestroyAPIView):
     queryset = Lesson.objects.all()
     permission_classes = [IsOwner]
+
+    @swagger_auto_schema(operation_id="Удаление урока")
+    def delete(self, request, *args, **kwargs):
+        return super(LessonDeleteView, self).delete(request, *args, **kwargs)
 
 
 class SubscriptionCreateView(CreateAPIView):
@@ -131,4 +156,8 @@ class SubscriptionDeleteView(DestroyAPIView):
 
         return Response({'Вы отписались от обновлений курса.'},
                         status=status.HTTP_204_NO_CONTENT)
+
+    @swagger_auto_schema(operation_id="Отключение подписки")
+    def delete(self, request, *args, **kwargs):
+        return super(SubscriptionDeleteView, self).delete(request, *args, **kwargs)
 

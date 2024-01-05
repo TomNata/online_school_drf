@@ -7,7 +7,7 @@ from users.models import User
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        Payment.objects.all().delete()
+        #Payment.objects.all().delete()
         payment_list = [
             {'user': User.objects.get(email='kim@yandex.ru'), 'date': '2023-11-11',
              'course': Course.objects.get(name='Python developer'), 'lesson': None,
