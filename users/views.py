@@ -29,9 +29,10 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.action in ['retrieve', 'update', 'partial_update'] \
                 and self.request.user == self.get_object():
             serializer_class = UserPaymentSerializer
+        elif self.action == 'create':
+            serializer_class = UserSerializer
         else:
             serializer_class = UserViewSerializer
-        if self.action == 'create':
-            serializer_class = UserSerializer
+
         return serializer_class
 
