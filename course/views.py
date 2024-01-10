@@ -11,6 +11,7 @@ from course.paginators import CourseLessonPaginator
 from course.permissions import NotModerator, IsOwner, IsModeratorOrOwner, IsUser
 from course.serializers import CourseSerializer, LessonSerializer, LessonCreateSerializer, SubscriptionSerializer, \
     CourseSubscriptionSerializer
+from .tasks import send_mail_course_update
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -28,6 +29,14 @@ class CourseViewSet(viewsets.ModelViewSet):
 
         return [permission() for permission in self.permission_classes]
 
+    def get_queryset(self):
+        user = self.request.user
+        if user.groups.filter(name='moderator').exists():
+            courses = Course.objects.all()
+        else:
+            courses = Course.objects.filter(owner=user)
+        return courses
+
     def perform_create(self, serializer):
         new_course = serializer.save()
         new_course.owner = self.request.user
@@ -41,13 +50,10 @@ class CourseViewSet(viewsets.ModelViewSet):
         serializer = CourseSubscriptionSerializer(course)
         return Response(serializer.data)
 
-    def get_queryset(self):
-        user = self.request.user
-        if user.groups.filter(name='moderator').exists():
-            courses = Course.objects.all()
-        else:
-            courses = Course.objects.filter(owner=user)
-        return courses
+    def update(self, request, pk=None, *args, **kwargs):
+        course = Course.objects.get(pk=pk)
+        send_mail_course_update.delay(course.id)
+        return Response('Курс успешно обновлен', status=status.HTTP_200_OK)
 
 
 class LessonCreateView(CreateAPIView):
@@ -98,11 +104,15 @@ class LessonUpdateView(UpdateAPIView):
     permission_classes = [IsModeratorOrOwner]
 
     @swagger_auto_schema(operation_id="Редактирование урока")
-    def put(self, request, *args, **kwargs):
+    def put(self, request, pk=None, *args, **kwargs):
+        course = Lesson.filter(pk=pk).first().course
+        send_mail_course_update.delay(course.id)
         return super(LessonUpdateView, self).put(request, *args, **kwargs)
 
     @swagger_auto_schema(operation_id="Частичное редактирование урока")
-    def patch(self, request, *args, **kwargs):
+    def patch(self, request, pk=None, *args, **kwargs):
+        course = Lesson.objects.filter(pk=pk).first().course
+        send_mail_course_update.delay(course.id)
         return super(LessonUpdateView, self).patch(request, *args, **kwargs)
 
 
