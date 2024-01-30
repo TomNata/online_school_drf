@@ -61,4 +61,3 @@ def check_user_activity():
         user.is_active = False
         user.save(update_fields=["is_active"])
         print('Пользователь заблокирован')
-
