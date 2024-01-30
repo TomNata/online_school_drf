@@ -91,6 +91,8 @@ DATABASES = {
         'PASSWORD': os.getenv('PASSWORD'),
         'PORT': os.getenv('PORT'),
         'HOST': os.getenv('HOST'),
+        # для запуска на локальном компьютере:
+        #'HOST': '127.0.0.1',
     }
 }
 
@@ -181,10 +183,10 @@ SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
 
 # URL-адрес брокера сообщений
-CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 
 # URL-адрес брокера результатов
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://redis:6379'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = "Europe/Moscow"
