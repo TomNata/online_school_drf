@@ -11,9 +11,9 @@ services:
     env_file:
       - .env
     environment:
-      POSTGRES_PASSWORD: "${PASSWORD}"
       POSTGRES_DB: "${NAME}"
       POSTGRES_USER: "${USER}"
+      POSTGRES_PASSWORD: "${PASSWORD}"
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./pgdata:/var/lib/postgresql/data/pgdata
@@ -46,6 +46,10 @@ services:
     depends_on:
       - db
       - app
+    environment:
+      POSTGRES_DB: "${NAME}"
+      POSTGRES_USER: "${USER}"
+      POSTGRES_PASSWORD: "${PASSWORD}"
 
 volumes:
   pg_data:
