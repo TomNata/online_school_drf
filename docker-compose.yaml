@@ -43,6 +43,8 @@ services:
     depends_on:
       - db
       - app
+    env_file:
+      - .env
 
 volumes:
   pg_data:
